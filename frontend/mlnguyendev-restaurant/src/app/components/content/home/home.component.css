@@ -1,5 +1,5 @@
 .parallax-header {
-    background: #000;
+    background: #292b2c;
     background: url('/assets/images/restaurant-space.jpg');
     
     background-attachment: fixed;
@@ -32,7 +32,7 @@
 }
 
 .parallax-section-1 {
-    background: #000;
+    background: #292b2c;
     background: url('/assets/images/strawberry-and-chocolate.jpg');
     
     background-attachment: fixed;
@@ -42,8 +42,26 @@
 }
 
 .section-content {
+    padding: 200px 0 200px 0;
+}
+
+.comments{
     padding: 100px 0 100px 0;
+    width: 700px;
+    height: 500px;
+    background: #292b2c;
 }
 .section-content h1 {
     color: orange;
 }
+
+.menu-item-imgs {
+    width: 400px;
+    height: 300px;
+}
+
+.parallax-section-2 {
+    min-height: 400px;
+    background: transparent;
+}
+
