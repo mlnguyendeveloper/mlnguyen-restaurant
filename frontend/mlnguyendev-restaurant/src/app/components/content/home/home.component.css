@@ -1,0 +1,49 @@
+.parallax-header {
+    background: #000;
+    background: url('/assets/images/restaurant-space.jpg');
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.header-content {
+    padding: 100px 0 350px 0;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.title-location{
+    padding: 40px 0 10px 0;
+    text-align: center;
+}
+
+.store-front-img {
+    width: 400px;
+    height: 400px;
+}
+
+.store-front-address {
+    margin-top: 15px;
+}
+
+.parallax-section-1 {
+    background: #000;
+    background: url('/assets/images/strawberry-and-chocolate.jpg');
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-content {
+    padding: 100px 0 100px 0;
+}
+.section-content h1 {
+    color: orange;
+}
