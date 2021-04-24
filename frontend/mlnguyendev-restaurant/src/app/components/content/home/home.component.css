@@ -14,7 +14,7 @@
 }
 
 .content {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .title-location{
@@ -24,7 +24,7 @@
 
 .store-front-img {
     width: 400px;
-    height: 400px;
+    height: 275px;
 }
 
 .store-front-address {
@@ -44,24 +44,43 @@
 .section-content {
     padding: 200px 0 200px 0;
 }
-
-.comments{
+.section-content-2 {
     padding: 100px 0 100px 0;
+}
+.comments-container{
+    padding: 75px 0 100px 0;
     width: 700px;
     height: 500px;
     background: #292b2c;
+}
+
+.comment {
+    width: 700px;
+    height: 345px;
+    margin-top: 30px;
+    outline-style: none;
+}
+.comment h2 {
+    padding-top: 20px;
+    width: 350px;
+    height: 200px;
 }
 .section-content h1 {
     color: orange;
 }
 
+img {
+    margin: 10px;
+}
+
 .menu-item-imgs {
     width: 400px;
     height: 300px;
+   
 }
 
 .parallax-section-2 {
-    min-height: 400px;
+    min-height: 100px;
     background: transparent;
 }
 
