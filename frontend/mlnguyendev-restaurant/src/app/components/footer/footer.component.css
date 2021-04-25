@@ -1,0 +1,27 @@
+h1 {
+    color: orange;
+}
+
+.footer {
+    padding: 80px 0 80px 0;
+}
+.category-header {
+    color: orange;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.location-links * {
+    font-size: 12;
+    color: peachpuff;
+    margin-top: 3px;
+}
+
+.social-media-links a {
+    color: white;
+    margin-right: 15px;
+}
+.social-media-links p {
+    color: peachpuff;
+    margin-top: 15px;
+}

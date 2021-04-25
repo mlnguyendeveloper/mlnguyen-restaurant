@@ -9,7 +9,10 @@ import { HomeComponent } from './components/content/home/home.component';
 import { AboutComponent } from './components/content/about/about.component';
 import { LocationsComponent } from './components/content/locations/locations.component';
 import { MenuComponent } from './components/content/menu/menu.component';
-
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,14 +20,20 @@ import { MenuComponent } from './components/content/menu/menu.component';
     HomeComponent,
     AboutComponent,
     LocationsComponent,
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faTwitter, faFacebook, faInstagram);
+  }
+}
