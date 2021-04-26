@@ -1,0 +1,5 @@
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
