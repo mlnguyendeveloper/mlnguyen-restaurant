@@ -1,0 +1,33 @@
+.header-container {
+    padding: 0 0 0 0;
+}
+.jumbotron {
+    background: url('/assets/images/about/dining-inside.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 0 0 0;
+}
+
+.content {
+    min-height: 75%; 
+    min-height: 75vh;
+}
+
+.display-1 {
+    padding-bottom: 20px;
+    text-shadow: 3px 3px 10px #000000;
+}
+
+h4 {
+    text-shadow: 3px 3px 10px #000000;
+}
+
+.history-content {
+    padding: 3rem 0 3rem 0;
+    background-color: rgb(34, 34, 34);
+}
+
+.img-fluid {
+    padding-top: 1rem;
+}
