@@ -1,6 +1,6 @@
 .parallax-header {
     background: #292b2c;
-    background: url('/assets/images/restaurant-space.jpg');
+    background: url('/assets/images/home/restaurant-space.jpg');
     
     background-attachment: fixed;
     background-position: center;
@@ -41,7 +41,7 @@
 
 .parallax-section-1 {
     background: #292b2c;
-    background: url('/assets/images/strawberry-and-chocolate.jpg');
+    background: url('/assets/images/home/strawberry-and-chocolate.jpg');
     
     background-attachment: fixed;
     background-position: center;
