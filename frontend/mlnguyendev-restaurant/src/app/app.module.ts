@@ -13,6 +13,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import { LocationService } from './services/location.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,15 +25,17 @@ import { faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-
     AboutComponent,
     LocationsComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
