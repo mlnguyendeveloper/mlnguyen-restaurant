@@ -1,1 +1,105 @@
-<p>{{currentLocation.name}}</p>
+<div class="wrapper">
+
+    <div class="header-container container-fluid">
+        <!-- Parallax Header -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="content d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <img src="assets/images/mlnguyen logo.PNG" width="200" class="d-block mx-auto">
+                    <h1 class="display-2">{{currentLocation.address}}</h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about-restaurant container">
+        <div class="row">
+
+            <!-- About Restaurant Header and Description-->
+            <div class="col-md-6">
+                <h1 class="display-3">The Experience</h1>
+                <p>{{currentLocation.description}}</p>
+                <h3 class="text-right">{{currentLocation.name}} Location - <a
+                        href="tel:{{currentLocation.phone}}">{{currentLocation.phone}}</a></h3>
+            </div>
+
+            <!-- Img of restaurant-->
+            <div class="col-md-6">
+                <img class="img-fluid" src="{{currentLocation.imageUrl}}" alt="{{currentLocation.name}} Location">
+            </div>
+        </div>
+    </div>
+
+    <div class="hours-of-operation container-fluid">
+        <div class="container">
+            <div class="justify-content-center text-center">
+                <h1>Our Business Hours</h1>
+                <div class="schedule row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col text-left">
+                                <h4>Monday</h4>
+                                <h4>Tuesday</h4>
+                                <h4>Wednesday</h4>
+                                <h4>Thursday</h4>
+                                <h4>Friday</h4>
+                                <h4>Saturday</h4>
+                                <h4>Sunday</h4>
+                            </div>
+        
+                            <div class="col text-justify">
+                                <h4>{{currentLocation.hoursOfOperations.get("Monday")}}</h4>
+                                <h4>{{currentLocation.hoursOfOperations.get("Tuesday")}}</h4>
+                                <h4>{{currentLocation.hoursOfOperations.get("Wednesday")}}</h4>
+                                <h4>{{currentLocation.hoursOfOperations.get("Thursday")}}</h4>
+                                <h4>{{currentLocation.hoursOfOperations.get("Friday")}}</h4>
+                                <h4>{{currentLocation.hoursOfOperations.get("Saturday")}}</h4>
+                                <h4>{{currentLocation.hoursOfOperations.get("Sunday")}}</h4>
+                            </div>
+                        </div>
+                        <p class="display-5"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-container container-fluid">
+
+        <!-- Gallery -->
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="display-2">{{currentLocation.address}}</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 gallery-left">
+                    <img class="img-fluid" src="assets/images/menu-items/veggie-pizza.jpg">
+                </div>
+                <div class="col-md-6 gallery-right">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img class="img-fluid" src="assets/images/menu-items/shrimp-rice.jpg">
+                        </div>
+                        <div class="col-md-12">
+                            <img class="img-fluid" src="assets/images/menu-items/salad.jpg">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 gallery-bottom">
+                    <img class="img-fluid" src="assets/images/menu-items/steak-and-fries.jpg">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

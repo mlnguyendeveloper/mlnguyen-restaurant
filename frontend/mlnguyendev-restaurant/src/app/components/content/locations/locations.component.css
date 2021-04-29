@@ -1,0 +1,67 @@
+.header-container {
+    padding: 0 0 0 0;
+}
+
+.jumbotron {
+    background: url('/assets/images/locations/fancy-pizza.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 0 0 0;
+}
+
+.content {
+    min-height: 75%; 
+    min-height: 75vh;
+}
+
+.about-restaurant {
+    padding: 4rem 0 4rem 0;
+}
+
+.display-2 {
+    text-shadow: 3px 3px 10px #000000;
+}
+
+.hours-of-operation {
+    padding: 7rem 0 7rem 0;
+    background: url('/assets/images/locations/toronto.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hours-of-operation h1 {
+    text-shadow: 3px 3px 10px #000000;
+    padding: 1rem 0 1rem 0;
+    color: darkorange;
+}
+
+.hours-of-operation h4 {
+    text-shadow: 3px 3px 10px #000000;
+}
+
+.gallery-container {
+    padding: 2rem 0 2rem 0;
+}
+
+.gallery-left img{ 
+    height: 800px;
+    width: 600px;
+    margin-top: 30px;
+}
+
+.gallery-right img {
+    margin-top: 30px;
+    height: 385px;
+    width: 600px;
+}
+
+.gallery-bottom img {
+    margin-top: 30px;
+    width: 1230px;
+    height: 400px;
+    object-fit: cover;
+}
