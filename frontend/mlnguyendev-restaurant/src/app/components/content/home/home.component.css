@@ -97,6 +97,12 @@ img {
 
 .parallax-section-2 {
     min-height: 100px;
-    background: transparent;
+    background: #292b2c;
+    background: url('/assets/images/home/pizza-with-ingrediants.jpg');
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
