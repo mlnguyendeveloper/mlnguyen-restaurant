@@ -16,6 +16,7 @@ import { faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-
 import { LocationService } from './services/location.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { MenuService } from './services/menu.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     FontAwesomeModule,
     HttpClientModule
   ],
-  providers: [LocationService],
+  providers: [LocationService, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
