@@ -11,7 +11,7 @@ import { MenuCategory } from '../common/menu-category';
 export class MenuService {
 
   private menuItemUrl = 'http://localhost:8080/api/menuItems';
-  private menuCategoryUrl = 'http://localhost:8080/api/menu-categories';
+  private menuCategoryUrl = 'http://localhost:8080/api/menu-categories?projection=CategoryWithAllItems';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,6 +23,14 @@ export class MenuService {
     return this.getMenuItems(searchUrl);
   }
 
+  getMenuCategoryByName(name: string): Observable<MenuCategory[]> {
+
+    //build url for products by category id
+    const searchUrl = `${this.menuCategoryUrl}/search/findByCategoryName?name=${name}`;
+
+    return this.getMenuCategories(searchUrl);
+  }
+
   getMenuCategoriesList(): Observable<MenuCategory[]> {
     return this.httpClient.get<GetResponseMenuCategories>(this.menuCategoryUrl).pipe(
       map(response => response._embedded.menuCategory)
@@ -32,6 +40,12 @@ export class MenuService {
   private getMenuItems(searchUrl: string): Observable<MenuItem[]> {
     return this.httpClient.get<GetResponseMenuItems>(searchUrl).pipe(
       map(response => response._embedded.menuItems)
+    );
+  }
+
+  private getMenuCategories(searchUrl: string): Observable<MenuCategory[]> {
+    return this.httpClient.get<GetResponseMenuCategories>(searchUrl).pipe(
+      map(response => response._embedded.menuCategory)
     );
   }
 }
