@@ -4,6 +4,9 @@ import com.mlnguyen.mlnguyenrestaurant.entity.MenuCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.List;
+
 @RepositoryRestResource(collectionResourceRel = "menuCategory", path="menu-categories")
 public interface MenuCategoryRepository extends JpaRepository<MenuCategory, Long> {
+    MenuCategory findByCategoryName(String name);
 }
