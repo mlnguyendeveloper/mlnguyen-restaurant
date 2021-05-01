@@ -1,1 +1,53 @@
-<p>menu works!</p>
+<div class="menu-wrapper">
+    <div class="container">
+
+        <div class="menu-header text-center justify-content-center">
+            <img src="assets/images/mlnguyen logo.PNG" width="200" class="d-block mx-auto">
+            <h1 class="display-2">Menu</h1>
+        </div>
+
+        <div class="menu-links">
+            <div class="row">
+                <div *ngFor="let tempCategory of menuCategories" class="col-md-4" id="category-{{tempCategory.id}}">
+                    <button type="button"
+                        class="btn rounded-pill btn-block btn-lg"
+                        [ngStyle]="{'background': menuCategoryColorCodes[tempCategory.id-1]}">
+                        {{tempCategory.categoryName}}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="menu-category">
+            <div *ngFor="let tempCategory of menuCategories" class="row" id="category-{{tempCategory.id}}">
+                <div class="menu-category-header" [ngStyle]="{'color': menuCategoryColorCodes[tempCategory.id-1]}">
+                    <h1>{{tempCategory.categoryName}}</h1>
+                    <hr>
+                </div>
+
+                <div *ngFor="let tempMenuItem of tempCategory.menuItems" class="col-md-6">
+                    <div class="d-flex" [ngStyle]="{'color': menuCategoryColorCodes[tempCategory.id-1]}">
+                        <div>
+                            <h3>
+                                {{tempMenuItem.name}}
+                            </h3>
+                        </div>
+
+                        <div class="ml-auto">
+                            <h4>
+                                {{tempMenuItem.price}}
+                            </h4>
+                        </div>
+                    </div>
+                    <div>
+                        <p>{{tempMenuItem.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

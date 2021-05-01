@@ -1,0 +1,23 @@
+.menu-wrapper {
+    padding: 3rem 0 5rem 0;
+}
+
+.menu-header {
+    padding: 5rem 0 1rem 0;
+}
+
+.btn {
+    margin: 1rem 0 1rem 0rem;
+}
+
+.menu-category {
+    margin: 2rem 0 2rem 0;
+}
+
+.menu-category-header {
+    margin: 2rem 0 1rem 0;
+}
+.menu-category-header hr {
+    border: none;
+    height: 5px;
+}
