@@ -1,8 +1,21 @@
 <div class="wrapper">
     <div class="container">
-        <h1>blah</h1>
-        <div *ngFor="let category of menuCategories">
-            <h1>{{category.categoryName}}</h1>
+
+        <div class="menu-header">
+            <h1 class="display-1">Menu</h1>
+        </div>
+
+        <div class="menu-links">
+            <button type="button" class="btn btn-primary">starters</button>
+        </div>
+
+        <div *ngFor="let tempCategory of menuCategories" class="row">
+            <h1>{{tempCategory.categoryName}}</h1>
+            <hr>
+
+            <div *ngFor="let tempMenuItem of tempCategory.menuItems" class="col-md-6">
+                <h3>{{tempMenuItem.name}}</h3>
+            </div>
         </div>
 
     </div>

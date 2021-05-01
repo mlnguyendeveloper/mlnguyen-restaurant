@@ -10,21 +10,23 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class MenuComponent implements OnInit {
 
-  //menuItems!: MenuItem[];
-  menuCategories!: MenuCategory[];
+  //Hardcoded categories to ensure order
+  menuCategoryNames: string[] = ['Appetizers and Snacks', 'Burgers', 'Pizzas', 'Mains', 'Desserts']
+
+  
+  menuCategories: MenuCategory[] = [];
 
   constructor(private menuService: MenuService) { }
 
-  ngOnInit(): void {
-    this.listMenuCategories();
-    console.log(this.menuCategories);
+  ngOnInit(): void { 
+    this.populateMenuCategories();
   }
 
-  listMenuCategories(){
+  populateMenuCategories() {
     this.menuService.getMenuCategoriesList().subscribe(
       data => {
+        console.log(data);
         this.menuCategories = data;
-        console.log('Menu Categories=' + JSON.stringify(data));
       }
     )
   }
