@@ -29,7 +29,7 @@ import { OrderComponent } from './components/content/order/order.component';
     MenuComponent,
     FooterComponent,
     NotfoundComponent,
-    OrderComponent
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

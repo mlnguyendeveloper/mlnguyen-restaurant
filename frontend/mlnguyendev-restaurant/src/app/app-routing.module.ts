@@ -4,12 +4,14 @@ import { AboutComponent } from './components/content/about/about.component';
 import { HomeComponent } from './components/content/home/home.component';
 import { LocationsComponent } from './components/content/locations/locations.component';
 import { MenuComponent } from './components/content/menu/menu.component';
+import { OrderComponent } from './components/content/order/order.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'locations/:name', component: LocationsComponent },
+  { path: 'order', component: OrderComponent },
   { path: 'menu', component: MenuComponent },
   { path: '**', component: NotfoundComponent } 
 ];
