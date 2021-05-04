@@ -56,13 +56,7 @@ public class MenuItem {
             inverseJoinColumns = @JoinColumn(name="add_on_category_id"))
     private Set<AddOnCategory> addOnCategories;
 
-    public void setCategory(MenuCategory menuCategory) {
-        if (menuCategory != null) {
-            this.category = menuCategory;
-
-            menuCategory.add(this);
-        }
-    }
+    public MenuItem() {}
 
     public MenuItem(String name, String description, BigDecimal price, String imageUrl, boolean active, MenuCategory category) {
         this.name = name;
@@ -73,6 +67,14 @@ public class MenuItem {
         this.setCategory(category);
 
         this.addOnCategories = new HashSet<>();
+    }
+
+    public void setCategory(MenuCategory menuCategory) {
+        if (menuCategory != null) {
+            this.category = menuCategory;
+
+            menuCategory.add(this);
+        }
     }
 
     public void add(AddOnCategory addOnCategory) {

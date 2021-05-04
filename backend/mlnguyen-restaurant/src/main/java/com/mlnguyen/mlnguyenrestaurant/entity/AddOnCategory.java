@@ -36,6 +36,8 @@ public class AddOnCategory {
     @ManyToMany(mappedBy = "addOnCategories")
     private Set<MenuItem> menuItems;
 
+    public AddOnCategory() {}
+
     public AddOnCategory(String categoryName, String description, boolean required, int quantityLimit) {
         this.categoryName = categoryName;
         this.description = description;

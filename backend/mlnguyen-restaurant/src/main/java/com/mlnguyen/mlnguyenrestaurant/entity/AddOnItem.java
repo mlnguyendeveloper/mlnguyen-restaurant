@@ -32,6 +32,8 @@ public class AddOnItem {
     @JoinColumn(name="add_on_category_id", nullable = false)
     private AddOnCategory category;
 
+    public AddOnItem() {}
+
     public AddOnItem(String name, BigDecimal price, String imageUrl, boolean active) {
         this.name = name;
         this.price = price;

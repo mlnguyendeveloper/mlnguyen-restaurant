@@ -27,6 +27,8 @@ public class MenuCategory {
     @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "category")
     private Set<MenuItem> menuItems;
 
+    public MenuCategory(){}
+
     public MenuCategory(String categoryName, String description) {
         this.categoryName = categoryName;
         this.description = description;
