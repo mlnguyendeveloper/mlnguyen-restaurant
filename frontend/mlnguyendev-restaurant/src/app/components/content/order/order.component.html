@@ -5,19 +5,37 @@
             <h1 class="display-2">Order now</h1>
         </div>
     </div>
-    
 
-    <div class="order-location-selection">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-1">
-                <p>Ordering at: </p>
+            <h1>Toronto location</h1>
+            <div class="col-sm-6">
+                <p>789 Toronto St, ON A1A 1A1, Canada</p>
+                <p>789 Toronto St, ON A1A 1A1, Canada</p>
+                <button type="button" class="btn btn-primary btn-lg">Change Location</button>
             </div>
+            
             <div class="col-sm-6">
                 <button type="button" class="btn btn-primary">Primary</button>
             </div>
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-success">Success</button>
+            
+        </div>
+        <div class="menu-items">
+            <div *ngFor="let tempCategory of menuCategories" class="row" id="category-{{tempCategory.id}}">
+                <h1>{{tempCategory.categoryName}}</h1>
+
+                <div *ngFor="let tempMenuItem of tempCategory.menuItems" class="card-deck col-md-6">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="{{tempMenuItem.imageUrl}}" alt="{{tempMenuItem.name}} - {{tempMenuItem.price | currency:'CAD'}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{tempMenuItem.name}}</h5>
+                            <p class="card-text">{{tempMenuItem.description}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
 
     </div>
