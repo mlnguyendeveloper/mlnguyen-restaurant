@@ -7,21 +7,35 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <h1>Toronto location</h1>
-            <div class="col-sm-6">
-                <p>789 Toronto St, ON A1A 1A1, Canada</p>
-                <p>789 Toronto St, ON A1A 1A1, Canada</p>
-                <button type="button" class="btn btn-primary btn-lg">Change Location</button>
+        <div class="row location">
+            <h1>{{currentLocation.name}} Location</h1>
+            <div class="col-sm-6 location-details">
+                <p>{{currentLocation.address}}</p>
+                <p>{{currentLocation.phone}}</p>
+                <p>{{getTodaysHours(currentLocation)}}</p>
+
+                <div ngbDropdown class="d-inline-block d-flex align-items-end justify-content-start">
+                    <button class="btn btn btn-primary" id="location-selection" ngbDropdownToggle>{{currentLocation.name}}</button>
+                    <div ngbDropdownMenu aria-labelledby="location-selection">
+                        <button *ngFor="let location of locations" 
+                            (click)="populateLocation(location.name);"
+                            ngbDropdownItem>{{location.name}}</button>
+                    </div>
+                </div>
             </div>
-            
-            <div class="col-sm-6">
-                <button type="button" class="btn btn-primary">Primary</button>
+
+            <div class="col-sm-6 d-flex align-items-end justify-content-end">
+
+                <div class="btn-group btn-group-md" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">Pickup</button>
+                    <button type="button" class="btn btn-secondary">Delivery</button>
+                </div>
+
             </div>
-            
+            <hr>
         </div>
         <div class="menu-items">
-            <div *ngFor="let tempCategory of menuCategories" class="row" id="category-{{tempCategory.id}}">
+            <div *ngFor="let tempCategory of menuCategories" class="row d-flex justify-content-center" id="category-{{tempCategory.id}}">
                 <h1>{{tempCategory.categoryName}}</h1>
 
                 <div *ngFor="let tempMenuItem of tempCategory.menuItems" class="card-deck col-md-6">
