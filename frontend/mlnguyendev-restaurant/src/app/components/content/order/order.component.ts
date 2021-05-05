@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuCategory } from 'src/app/common/menu-category';
 import { MenuService } from 'src/app/services/menu.service';
 import { Menu } from 'src/app/constants/menu';
+import { LocationService } from 'src/app/services/location.service';
+import { Location } from 'src/app/common/location';
 
 @Component({
   selector: 'app-order',
@@ -16,13 +18,20 @@ export class OrderComponent implements OnInit {
     
     menuCategories: MenuCategory[] = [];
 
-  constructor(private menuService: MenuService) { 
+    locations: Location[] = [];
+    currentLocation : Location = new Location();
+
+  constructor(private menuService: MenuService, private locationService: LocationService) { 
     this.menuCategoryNames = Menu.menuCategoryNames;
     this.menuCategoryColorCodes = Menu.menuCategoryColorCodes;
   }
 
   ngOnInit(): void {
     this.populateMenuCategories();
+    this.populateLocations();
+
+    //Automatically assume current location with whatever is in the first location
+    this.populateLocation(this.locations[0].name);
   }
 
   populateMenuCategories() {
@@ -32,5 +41,50 @@ export class OrderComponent implements OnInit {
         this.menuCategories = data;
       }
     )
+  }
+
+  populateLocations() {
+    this.locations = this.locationService.getLocations();
+  }
+
+  populateLocation(locationName: string){
+    this.locationService.populateLocation(locationName).subscribe(
+      data => {
+        this.currentLocation = data;
+      }
+    );
+  }
+
+  getTodaysHours(location: Location): string {
+    let day: string;
+
+    switch (new Date().getDay()) {
+      case 0:
+        day = "Sunday";
+        break;
+      case 1:
+        day = "Monday";
+        break;
+      case 2:
+        day = "Tuesday";
+        break;
+      case 3:
+        day = "Wednesday";
+        break;
+      case 4:
+        day = "Thursday";
+        break;
+      case 5:
+        day = "Friday";
+        break;
+      case 6:
+        day = "Saturday";
+        break
+      default:
+        day = "";
+    }
+
+    let hours = location.hoursOfOperations.get(day);
+    return day + ": " + hours;
   }
 }
