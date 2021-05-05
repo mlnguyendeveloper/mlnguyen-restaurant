@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuCategory } from 'src/app/common/menu-category';
 import { MenuService } from 'src/app/services/menu.service';
+import { Menu } from 'src/app/constants/menu';
 
 @Component({
   selector: 'app-menu',
@@ -10,12 +11,15 @@ import { MenuService } from 'src/app/services/menu.service';
 export class MenuComponent implements OnInit {
 
   //Hardcoded categories to ensure order
-  menuCategoryNames: string[] = ['Appetizers and Snacks', 'Burgers', 'Pizzas', 'Mains', 'Desserts']
-  menuCategoryColorCodes: string[] = ["#FF69B4", "#F08080", "#FFDAB9", "#40E0D0", "#00BFFF"]; 
+  menuCategoryNames: string[];
+  menuCategoryColorCodes: string[]; 
   
   menuCategories: MenuCategory[] = [];
 
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService) { 
+    this.menuCategoryNames = Menu.menuCategoryNames;
+    this.menuCategoryColorCodes = Menu.menuCategoryColorCodes;
+  }
 
   ngOnInit(): void { 
     this.populateMenuCategories();
