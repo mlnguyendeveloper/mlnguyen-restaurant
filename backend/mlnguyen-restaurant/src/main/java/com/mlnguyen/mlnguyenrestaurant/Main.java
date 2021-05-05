@@ -75,7 +75,7 @@ public class Main implements CommandLineRunner {
         MenuItem threeCheesePizza = new MenuItem("Three cheese pizza", "The romance of the three cheeses. Parmesan, cheddar and mozzarella cheese.",
                 new BigDecimal(19.99), "assets/images/menu-items/threeCheesePizzas.jpg", true, pizzasCategory);
         MenuItem californianPizza = new MenuItem("Californian pizza", "California-styled pizza with kale, egg, and bacon",
-                new BigDecimal(22.99), "assets/images/menu-items/burger.jpg", true, pizzasCategory);
+                new BigDecimal(22.99), "assets/images/menu-items/californianPizza.jpg", true, pizzasCategory);
         MenuItem chicagoPizza = new MenuItem("Chicago deep dish pizza", "Haters call it a casserole. Thick deep crust, layered with mozzarella cheese, and pizza sauce.",
                 new BigDecimal(23.99), "assets/images/menu-items/deepDishPizza.jpg", true, pizzasCategory);
 
@@ -93,7 +93,7 @@ public class Main implements CommandLineRunner {
         MenuItem iceCreamAndCake = new MenuItem("Cream and cake", "A slice of cake with your choice of ice cream.",
                 new BigDecimal(13.99), "assets/images/menu-items/iceCreamAndCake.jpg", true, dessertsCategory);
         MenuItem cheeseCake = new MenuItem("New Yorker's cheesecake", "New York styled cheesecake. Enjoy it plain or with chocolate or caramel sauce.",
-                new BigDecimal(9.99), "assets/images/menu-items/burger.jpg", true, dessertsCategory);
+                new BigDecimal(9.99), "assets/images/menu-items/cheesecake.jpg", true, dessertsCategory);
         MenuItem iceCream = new MenuItem("Ice cream", "Sweet and cool. A single scoop of your choice of ice cream.",
                 new BigDecimal(7.99), "assets/images/menu-items/iceCream.jpg", true, dessertsCategory);
         MenuItem flurryShake = new MenuItem("Flurry Shakes", "Extra thick ice cream shakes!",
