@@ -38,7 +38,7 @@
             <div *ngFor="let tempCategory of menuCategories" class="row d-flex justify-content-center" id="category-{{tempCategory.id}}">
                 <h1>{{tempCategory.categoryName}}</h1>
 
-                <div *ngFor="let tempMenuItem of tempCategory.menuItems" class="card-deck col-md-6">
+                <div *ngFor="let tempMenuItem of tempCategory.menuItems" (click)="open(tempMenuItem)" class="card-deck col-md-6">
                     <div class="card">
                         <img class="card-img-top img-fluid" src="{{tempMenuItem.imageUrl}}" alt="{{tempMenuItem.name}} - {{tempMenuItem.price | currency:'CAD'}}">
                         <div class="card-body">

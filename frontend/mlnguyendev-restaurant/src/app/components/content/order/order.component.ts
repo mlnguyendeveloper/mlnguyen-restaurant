@@ -4,6 +4,9 @@ import { MenuService } from 'src/app/services/menu.service';
 import { Menu } from 'src/app/constants/menu';
 import { LocationService } from 'src/app/services/location.service';
 import { Location } from 'src/app/common/location';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MenuItem } from 'src/app/common/menu-item';
+import { AddItemComponent } from 'src/app/popup/add-item/add-item.component';
 
 @Component({
   selector: 'app-order',
@@ -20,8 +23,8 @@ export class OrderComponent implements OnInit {
 
     locations: Location[] = [];
     currentLocation : Location = new Location();
-
-  constructor(private menuService: MenuService, private locationService: LocationService) { 
+    
+  constructor(private menuService: MenuService, private locationService: LocationService, private modalService: NgbModal) { 
     this.menuCategoryNames = Menu.menuCategoryNames;
     this.menuCategoryColorCodes = Menu.menuCategoryColorCodes;
   }
@@ -32,6 +35,12 @@ export class OrderComponent implements OnInit {
 
     //Automatically assume current location with whatever is in the first location
     this.populateLocation(this.locations[0].name);
+  }
+
+  open(menuItem: MenuItem) {
+    
+    const ref = this.modalService.open(AddItemComponent);
+    ref.componentInstance.menuItem = menuItem;
   }
 
   populateMenuCategories() {
