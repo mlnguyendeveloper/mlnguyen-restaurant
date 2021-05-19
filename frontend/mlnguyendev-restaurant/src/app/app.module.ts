@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { MenuService } from './services/menu.service';
 import { OrderComponent } from './components/content/order/order.component';
+import { AddItemComponent } from './popup/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { OrderComponent } from './components/content/order/order.component';
     FooterComponent,
     NotfoundComponent,
     OrderComponent,
+    AddItemComponent,
   ],
   imports: [
     BrowserModule,
