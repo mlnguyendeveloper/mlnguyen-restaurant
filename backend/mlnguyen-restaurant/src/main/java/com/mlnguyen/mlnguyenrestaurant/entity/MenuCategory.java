@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,6 +24,27 @@ public class MenuCategory {
     @Column(name="description")
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "category")
     private Set<MenuItem> menuItems;
+
+    public MenuCategory(){}
+
+    public MenuCategory(String categoryName, String description) {
+        this.categoryName = categoryName;
+        this.description = description;
+
+        this.menuItems = new HashSet<>();
+    }
+
+    public void add(MenuItem menuItem) {
+        if (this.menuItems == null) {
+            this.menuItems = new HashSet<>();
+        }
+
+        if (menuItem != null && this.menuItems.contains(menuItem)){
+            menuItems.add(menuItem);
+
+            menuItem.setCategory(this);
+        }
+    }
 }

@@ -1,1 +1,58 @@
-<p>order works!</p>
+<div class="order-wrapper">
+    <div class="container-fluid">
+        <div class="order-header text-center justify-content-center">
+            <img src="assets/images/mlnguyen logo.PNG" width="200" class="d-block mx-auto">
+            <h1 class="display-2">Order now</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row location">
+            <h1>{{currentLocation.name}} Location</h1>
+            <div class="col-sm-6 location-details">
+                <p>{{currentLocation.address}}</p>
+                <p>{{currentLocation.phone}}</p>
+                <p>{{getTodaysHours(currentLocation)}}</p>
+
+                <div ngbDropdown class="d-inline-block d-flex align-items-end justify-content-start">
+                    <button class="btn btn btn-primary" id="location-selection" ngbDropdownToggle>{{currentLocation.name}}</button>
+                    <div ngbDropdownMenu aria-labelledby="location-selection">
+                        <button *ngFor="let location of locations" 
+                            (click)="populateLocation(location.name);"
+                            ngbDropdownItem>{{location.name}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 d-flex align-items-end justify-content-end">
+
+                <div class="btn-group btn-group-md" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">Pickup</button>
+                    <button type="button" class="btn btn-secondary">Delivery</button>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+        <div class="menu-items">
+            <div *ngFor="let tempCategory of menuCategories" class="row d-flex justify-content-center" id="category-{{tempCategory.id}}">
+                <h1>{{tempCategory.categoryName}}</h1>
+
+                <div *ngFor="let tempMenuItem of tempCategory.menuItems" (click)="open(tempMenuItem)" class="card-deck col-md-6">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="{{tempMenuItem.imageUrl}}" alt="{{tempMenuItem.name}} - {{tempMenuItem.price | currency:'CAD'}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{tempMenuItem.name}}</h5>
+                            <p class="card-text">{{tempMenuItem.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
