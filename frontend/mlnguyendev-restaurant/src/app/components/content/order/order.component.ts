@@ -38,6 +38,8 @@ export class OrderComponent implements OnInit {
   }
 
   open(menuItem: MenuItem) {
+
+    console.log("Opening modal for:" + menuItem.name);
     
     const ref = this.modalService.open(AddItemComponent);
     ref.componentInstance.menuItem = menuItem;
